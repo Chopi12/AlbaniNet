@@ -1,0 +1,336 @@
+body {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../feedback-image/restourant.jpg") no-repeat center/cover;
+  filter: brightness(0.3) blur(7px);
+
+}
+
+.main {
+  align-items: center;
+  padding: 100px 10px 150px;
+}
+
+.feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  max-width: 1080px;
+  text-align: left;
+}
+
+.feedback__title {
+  color: #d89f16;
+  text-transform: uppercase;
+}
+
+.rating,
+.review,
+.feedback-form {
+  background-color: rgb(30 22 22 / 0.45);
+  border: 1px solid rgb(197 145 59 / 0.35);
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgb(0 0 0 / 0.6);
+}
+
+.stars {
+  display: inline-block;
+  font-size: 22px;
+  white-space: nowrap;
+  background: linear-gradient(90deg, rgb(197 145 59) calc(var(--rating) / 5 * 100%), rgb(255 0 0 / 0.2) 0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.stars::before {
+  content: "★★★★★";
+}
+
+.rating {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 40px;
+  padding: 30px;
+}
+
+.rating__score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.rating__number {
+  font-size: 72px;
+  font-weight: 700;
+  color: #d89f16;
+}
+
+.rating__count {
+  font-size: 16px;
+  color: #adadad;
+}
+
+.rating__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rating__row {
+  display: grid;
+  grid-template-columns: 40px 1fr 20px;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+}
+
+.rating__bar {
+  height: 80%;
+  overflow: hidden;
+  background-color: rgb(255 255 255 / 0.12);
+  border-radius: 5px;
+}
+
+.rating__fill {
+  display: block;
+  width: var(--value);
+  height: 100%;
+  background-color: rgb(197 145 59);
+}
+
+.rating__votes {
+  color: #adadad;
+}
+
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 24px;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+}
+
+.review:hover {
+  transform: translateY(-4px);
+  border-color: rgb(197 145 59 / 0.8);
+}
+
+.review__header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.review__avatar {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  font-size: 22px;
+  font-weight: 700;
+  background-image: linear-gradient(135deg, rgb(197 145 59), rgb(203 73 73));
+  border-radius: 50%;
+}
+
+.review__author {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.review__name {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.review__date {
+  font-size: 14px;
+  color: #adadad;
+}
+
+.review__text {
+  font-size: 18px;
+  line-height: 1.5;
+  color: rgb(255 255 255);
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 700px;
+  margin-inline: auto;
+  padding: 40px 30px;
+}
+
+.feedback-form__title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #d89f16;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.feedback-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.feedback-form label,
+.feedback-form legend {
+  font-size: 18px;
+  color: rgb(255 255 255 / 0.85);
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 18px;
+  color: rgb(255 255 255);
+  background-color: rgb(255 255 255 / 0.1);
+  border: 1px solid rgb(255 255 255 / 0.25);
+  border-radius: 8px;
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgb(255 255 255 / 0.45);
+}
+
+input[type="text"]:hover,
+textarea:hover {
+  border-color: rgb(197 145 59 / 0.7);
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: rgb(197 145 59);
+  box-shadow: 0 0 0 3px rgb(197 145 59 / 0.25);
+}
+
+input:user-invalid,
+textarea:user-invalid {
+  border-color: rgb(203 73 73);
+}
+
+.rating-input__stars {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
+  gap: 6px;
+}
+
+.rating-input__stars label {
+  font-size: 38px;
+  color: rgb(255 255 255 / 0.2);
+  cursor: pointer;
+}
+
+.rating-input__stars input:checked ~ label,
+.rating-input__stars label:hover,
+.rating-input__stars label:hover ~ label {
+  color: rgb(197 145 59);
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: rgb(255 255 255);
+  background-color: rgb(197 145 59);
+  border: 1px solid transparent;
+  border-radius: 8px;
+}
+
+button[type="submit"]:hover {
+  background-color: transparent;
+  border-color: rgb(197 145 59);
+}
+
+
+@media (max-width: 750px) {
+
+  .rating {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px 16px;
+  }
+
+  .rating__number {
+    font-size: 56px;
+  }
+
+  .review {
+    padding: 20px 16px;
+  }
+
+  .review__name {
+    font-size: 18px;
+  }
+
+  .review__text,
+  .feedback-form label,
+  .feedback-form legend {
+    font-size: 16px;
+  }
+
+  .feedback-form {
+    padding: 28px 16px;
+  }
+
+  .feedback-form__title {
+    font-size: 24px;
+  }
+
+  input[type="text"],
+  textarea {
+    font-size: 16px;
+  }
+
+  button[type="submit"] {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 450px) {
+
+  .review__header {
+    flex-wrap: wrap;
+  }
+
+  .stars {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlbaniNet-book</title>
+  <link rel="stylesheet" href="../main/main-styles/main.css">
+  <link rel="stylesheet" href="./book-styles/book-style.css">
+</head>
+
+<body>
+<header class="header">
+  <div class="header-container">
+    <a href="#" class="logo">Albani
+      <span>Net</span>
+    </a>
+    <nav class="navbar">
+      <ul class="navbar__list">
+        <li class="navbar__item">
+          <a href="../main/index.html" class="navbar__link">Главная</a>
+        </li>
+        <li class="navbar__item">
+          <a href="../menu/menu.html" class="navbar__link">Меню</a>
+        </li>
+        <li class="navbar__item">
+          <a href="#" class="navbar__link">Бронирование</a>
+        </li>
+        <li class="navbar__item">
+          <a href="../feedback/feedback.html" class="navbar__link">Отзывы</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+  <div class="contain">
+    <h2 class="form-title title">Бронирование</h2>
+
+    <form action="" class="book-form">
+      <div class="form-time content">
+        <div class="form-content">
+          <label for="data">Дата</label>
+          <input
+            required type="date" name="data" id="data"
+          >
+        </div>
+        <div class="form-content">
+          <label for="time">Время</label>
+          <input
+            required
+            type="time" name="time" id="time" min="09:00" max="23:00" step="900"
+          >
+        </div>
+      </div>
+      <div class="form-table content">
+        <div class="form-content">
+          <label for="type-tables">Вид столика(-ов)</label>
+          <select class="select-tables" id="type-tables" required>
+            <option value="" disabled selected>---Выберите столик---</option>
+            <option value="main">Обычный (расчитан до 4 человек)</option>
+            <option value="window">У окнонный (расчитан до 2 человек)</option>
+            <option value="terrace">Терасса (расчитана до 8 человек)</option>
+            <option value="hall">Отдельный зал (расчитан до 15 человек)</option>
+          </select>
+        </div>
+        <div class="form-content">
+          <label for="count-tables">Количество столика(-ов) (до 10)*</label>
+          <input
+            required
+            type="number" name="count-tables" id="count-tables" min="1" max="10"
+            placeholder="Введите количество столиков"
+          >
+        </div>
+        <div class="form-content">
+          <label for="count-persons">Количество людей (до 30)*</label>
+          <input
+            required
+            type="number" min="1" max="30" name="count-persons"
+            id="count-persons"
+            placeholder="Введите количество людей"
+          >
+        </div>
+      </div>
+      <div class="form-contacts content">
+        <div class="form-content">
+          <label for="user-name">Имя</label>
+          <input
+            required
+            type="text"
+            name="user-name"
+            id="user-name"
+            placeholder="Введите имя"
+          />
+        </div>
+        <div class="form-content">
+          <label for="user-surname">Фамилия</label>
+          <input
+            required
+            type="text"
+            name="user-surname"
+            id="user-surname"
+            placeholder="Введите фамилию"
+          />
+        </div>
+        <div class="form-content">
+          <label for="user-phone">Номер</label>
+          <input
+            required
+            type="tel"
+            name="user-phone"
+            id="user-phone"
+            placeholder="Введите номер телефона"
+          />
+        </div>
+        <div class="form-content">
+          <label for="user-email">Почта</label>
+          <input
+            required
+            type="email"
+            name="user-email"
+            id="user-email"
+            placeholder="Введите почту"
+          />
+        </div>
+        <div class="form-content">
+          <label for="comment">Комментарий</label>
+          <textarea
+            name="comment" id="comment" cols="auto" rows="2"
+            placeholder="Введите комментарий"
+          ></textarea>
+        </div>
+      </div>
+      <button type="submit">Забронировать</button>
+    </form>
+  </div>
+</main>
+
+<footer class="footer" id="contacts">
+  <div class="footer-contain">
+    <a href="tel:+79999999999">+7 (999) 999 99 99</a>
+    <a href="mailto:wqeqweqwe@gmail.com">wqeqweqwe@gmail.com</a>
+    <address>ул. Московская 40</address>
+  </div>
+
+  <a href="../main/index.html" class="logo">Albani
+    <span>Net</span>
+  </a>
+
+  <div class="social">
+    <ul class="social-list">
+      <li class="social-item">
+        <a
+          class="social-link"
+          href="https://vk.ru/"
+        >
+          <img
+            class="social-image"
+            src="../main/main-images/icons/vk.svg"
+            width="40"
+            height="40"
+            alt="VK"
+            loading="lazy"
+          />
+        </a>
+      </li>
+      <li class="social-item">
+        <a
+          class="social-link"
+          href="https://twitter"
+        >
+          <img
+            class="social-image"
+            src="../main/main-images/icons/twitter.svg"
+            width="40"
+            height="40"
+            alt="twitter"
+            loading="lazy"
+          />
+        </a>
+      </li>
+      <li class="social-item">
+        <a
+          class="social-link"
+          href="https://pinterest"
+        >
+          <img
+            class="social-image"
+            src="../main/main-images/icons/pinterest.svg"
+            width="40"
+            height="40"
+            alt="pinterest"
+            loading="lazy"
+          />
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+
+<div class="article">
+  <img
+    src="../main/main-images/sale.png"
+    alt="Робот-помощник"
+    width="70"
+    height="70"
+  >
+</div>
+
+<aside class="sale">
+  <div class="sale-card-content">
+    <h2 class="sale-card-logo">Albani <span>Net</span></h2>
+
+    <ul class="sale-card-offers">
+      <li class="sale-card-offer yellow">
+        Скидка на первое бронирование <strong>15%</strong>
+      </li>
+      <li class="sale-card-offer red">
+        Скидки в дни рождения до <strong>35%</strong>
+      </li>
+    </ul>
+
+    <p class="sale-card-main">Скидки по предзаказу до -40%</p>
+
+    <p class="sale-card-note">скидки могут суммироваться*</p>
+  </div>
+</aside>
+<a
+  class="arrow"
+  href="#"
+>
+  <img
+    class="arrow-image"
+    src="../main/main-images/arrow.png"
+    width="40"
+    height="40"
+    alt="arrow to top"
+    loading="lazy"
+  />
+</a>
+</body>
+
+</html>

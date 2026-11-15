@@ -1,0 +1,150 @@
+body {
+  position: relative;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../menu-images/restorant.jpg") no-repeat center/cover;
+  filter: brightness(0.3) blur(7px);
+
+}
+
+.main {
+  padding-block: 100px 150px;
+
+}
+
+.section {
+  margin-inline: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding: 10px;
+}
+
+.section:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.section::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #c5913b;
+  top: -20px;
+  left: 0;
+  box-shadow: 0 0 10px white;
+}
+
+.main__title {
+  font-size: 50px;
+  text-transform: uppercase;
+}
+
+.categories__title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.categories__cards {
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+
+  max-width: 1440px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+
+
+  background-color: #232121;
+  box-shadow: 0 0 15px -5px #000000;
+  border-radius: 20px;
+  transition: all 0.3s ease-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px -5px #c5913b;
+}
+
+.card:first-child {
+  padding: 0;
+}
+
+.card__image {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5/4;
+  border-radius: 10px 10px 0 0;
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  padding: 15px;
+}
+
+.card__title {
+  color: #E6F59A;
+  -webkit-text-stroke: 3px #2B1D14;
+  paint-order: stroke fill;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.card-description {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.card__price {
+  font-size: 30px;
+  font-weight: bold;
+  color: #cb4949;
+}
+
+@media (max-width: 750px) {
+  .card__title,
+  .card__price{
+    font-size: 20px;
+  }
+
+  .card-description {
+    font-size: 16px;
+  }
+
+  .categories__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .card__title,
+  .card__price {
+    font-size: 18px;
+  }
+
+  .card-description {
+    font-size: 14px;
+  }
+
+}
